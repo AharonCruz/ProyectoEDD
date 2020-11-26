@@ -17,7 +17,7 @@ import java.util.Map;
 public class App extends Application {
     
     private static Scene scene;
-    static public Map<String ,String > usuarios= new HashMap();
+    
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -37,10 +37,6 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        Data.CargarArchivo();
-        usuarios.forEach((k,v)-> System.out.println("Clave: " + k + " valor: "+ v));
-        usuarios.put("Hola","Geronimo");
-        Data.guardarArchivo();
         launch();
     }
 

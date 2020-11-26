@@ -13,6 +13,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -20,24 +21,25 @@ import java.util.Map;
  * @author Ac 001
  */
 public final class Data {
-
+    static public Map<String ,String > usuarios= new HashMap();
     private final static String nombre = "datos.txt";
     private static File archivo;
     
     public static boolean validarUsuario(String clave, String username){
-       for(Map.Entry<String,String> usuario: App.usuarios.entrySet()){
-           if(usuario.getKey()==clave && usuario.getValue()==username){
+       for(Map.Entry<String,String> usuario: usuarios.entrySet()){
+           if(usuario.getKey().equals(clave) && usuario.getValue()==username){
                return true;
            }
        }
         return false;
     }
+    
     public static void guardarArchivo() {
         String titulo = "Error al cargar el archivo";
         try {
             FileOutputStream fos = new FileOutputStream(nombre);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(App.usuarios);
+            oos.writeObject(usuarios);
             oos.close();
             fos.close();
         } catch (FileNotFoundException ex) {
@@ -55,7 +57,7 @@ public final class Data {
             try {
                 FileInputStream fis = new FileInputStream(nombre);
                 ObjectInputStream ois = new ObjectInputStream(fis);
-                App.usuarios = (Map<String, String>) ois.readObject();
+                usuarios = (Map<String, String>) ois.readObject();
                 ois.close();
                 fis.close();
             } catch (FileNotFoundException ex) {
@@ -72,9 +74,9 @@ public final class Data {
     }
 
     public static void generarDatos() {
-        App.usuarios.put("aharon", "123");
-        App.usuarios.put("David", "345");
-        App.usuarios.put("Adrian", "678");
+      usuarios.put("aharon", "123");
+       usuarios.put("David", "345");
+       usuarios.put("Adrian", "678");
     }
 
 }
