@@ -1,5 +1,6 @@
 package ec.edu.espol.proyectoedd;
 
+import ec.edu.espol.clases.Data;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,16 +8,20 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * JavaFX App
  */
 public class App extends Application {
-
+    
     private static Scene scene;
+    static public Map<String ,String > usuarios= new HashMap();
 
     @Override
     public void start(Stage stage) throws IOException {
+     
         scene = new Scene(loadFXML("primary"), 640, 480);
         stage.setScene(scene);
         stage.show();
@@ -32,6 +37,10 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
+        Data.CargarArchivo();
+        usuarios.forEach((k,v)-> System.out.println("Clave: " + k + " valor: "+ v));
+        usuarios.put("Hola","Geronimo");
+        Data.guardarArchivo();
         launch();
     }
 
