@@ -11,5 +11,8 @@ package ec.edu.espol.multimedia;
  */
 //Clase para simplificar las direcciones de ruta
 public class Constantes {
-    
+    //Ruta para Imagen de persona vida
+    public final static String IMAGENES= "src/main/java/ec/edu/espol/multimedia";
+    public final static String PERSONAVIVA= IMAGENES+"/per_viva.png";
+    public final static String PERSONAMUERTA= IMAGENES+"/per_muerta.png";
 }
