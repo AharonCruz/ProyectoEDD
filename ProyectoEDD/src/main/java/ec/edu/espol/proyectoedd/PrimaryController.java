@@ -2,25 +2,34 @@ package ec.edu.espol.proyectoedd;
 
 import java.io.IOException;
 import java.net.URL;
-
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class PrimaryController {
+public class PrimaryController implements Initializable {
 
+    
     @FXML
-    private Button regresar;
-    private Button iniciar;
-
+    private TextField txtUsuario;
+    @FXML
+    private TextField txtContraseña;
+    @FXML
+    private Button btnRegistrarse;
+    @FXML
+    private Button btnIniciar;
     
     
-    PrimaryController Primarycontroller;
     
+ 
     
     
     @FXML
@@ -39,7 +48,7 @@ public class PrimaryController {
         
         stage.setOnCloseRequest(e -> controlador.closeWindows());
         
-        Stage myStage = (Stage) this.iniciar.getScene().getWindow();
+        Stage myStage = (Stage) this.btnIniciar.getScene().getWindow();
         myStage.close();
         
         
@@ -55,8 +64,23 @@ public class PrimaryController {
         
     }
 
-    private Stage Stage() {
+  
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @FXML
+    private void verificarUsuario(ActionEvent event) {
+    }
+
+    @FXML
+    private void verificarContraseña(ActionEvent event) {
+    }
+
+    @FXML
+    private void Registrar(ActionEvent event) {
     }
 
     
