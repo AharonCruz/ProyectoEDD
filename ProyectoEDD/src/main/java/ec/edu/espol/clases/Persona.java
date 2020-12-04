@@ -17,7 +17,7 @@ import javafx.scene.shape.Rectangle;
  *
  * @author F. Lopez
  */
-public class Persona extends Rectangle {
+public class Persona {
     //dimensiones persona 40x60, 
     //dimensiones arma 60x80  ;X+=15      Y-=15      
     //dimensiones MIRA 90x100  ;X-=25      Y-=25
@@ -167,7 +167,7 @@ public class Persona extends Rectangle {
     public void setApariencia(Image apariencia) {
         this.apariencia = apariencia;
     }
-
+    
 
 
 }

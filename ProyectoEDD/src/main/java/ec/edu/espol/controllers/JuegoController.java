@@ -5,11 +5,17 @@
  */
 package ec.edu.espol.controllers;
 
+import ec.edu.espol.clases.DoubleLinkedList;
+import ec.edu.espol.clases.Hilo;
 import ec.edu.espol.clases.Persona;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 //import tritonus-share.class ;
 
 import javafx.scene.control.Button;
@@ -32,18 +38,17 @@ public class JuegoController implements Initializable {
     private Button salir;
     @FXML
     private Button repetir;
-    
+    DoubleLinkedList<Persona> pers=new DoubleLinkedList();//TOdas las personas
+    ArrayList<ArrayList<Node>> dirs=new ArrayList();//Todas las direcciones de memoria de los elementos de cada persona separado por sublistas
     private final int radio=225;
-    /**
-     * Initializes the controller class.
-     */
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
         //CENTRO DEL CIRCULO EN X=400 ; Y 235;    RADIO=225
         int n=12;
         System.out.println("inicia");
-        // AudioInputStream audioInput;
+        //AudioInputStream audioInput;
         /*try{
         File musicPath=new File("ssss");
         if(musicPath.exists()){
@@ -61,44 +66,77 @@ public class JuegoController implements Initializable {
         double cont=0;
         for(int i=0;i<n;i++){
             Persona pt=new Persona(radio*Math.cos(Math.toRadians(cont)),radio*Math.sin(Math.toRadians(cont)));
+            pers.addLast(pt);
+            ArrayList<Node> atris=new ArrayList();//ArrayList con todos los componentes de la persona que se agregan al contenedor
             for(ImageView iv: pt.getEstado_v()){
-                fondo.getChildren().add(iv);
+                fondo.getChildren().add(iv);   //Agrego el contenido visual de la persona             
+                atris.add(fondo.getChildren().get(fondo.getChildren().size()-1));
             }
+            dirs.add(atris);
             cont+=360/n;
         }
-        
-        /*
-        Image img=null; 
-        try {
-            img = new Image(new FileInputStream(Constantes.PERSONAMUERTA));
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
-        }
-        ImageView imgView = new ImageView(img);
-        imgView.setX(400);
-        imgView.setY(235);
-        imgView.setFitWidth(40.0);
-        imgView.setFitHeight(60.0);
-        fondo.getChildren().add(imgView);
-        */
-        Persona p1=new Persona();
-        p1.setArma(true);
-        p1.actualizarEstadov();
-        for(ImageView iv: p1.getEstado_v()){
-            fondo.getChildren().add(iv);
-        }
-        
+
         
     }    
     
+    public static void Sleep(int t){
+        try{
+            Thread.sleep(t);
+        }
+        catch (Exception e){
+            
+        }
+    }
+    
+    private void actualizarAp(int pos){
+        
+        
+        
+        Persona pert=pers.get(pos);
+        int tamprev=2;
+        for(int i=0;i<pert.getEstado_v().size();i++){
+            tamprev+=dirs.get(i).size();
+        }
+        fondo.getChildren().removeAll(dirs.get(pos));
+        pert.setVida(false);
+        pert.actualizarEstadov();
+        dirs.get(pos).clear();
+        ArrayList<Node> atris=new ArrayList();
+        for(ImageView iv: pert.getEstado_v()){
+            fondo.getChildren().add(tamprev,iv);
+            atris.add(fondo.getChildren().get(tamprev));
+            }
+        dirs.get(pos).addAll(atris);
+        
+        }
+        
+        
+    public static void pausar(long timeInMilliSeconds) {
+
+    long timestamp = System.currentTimeMillis();
+
+        do {
+        } while (System.currentTimeMillis() < timestamp + timeInMilliSeconds);
+        
+    }
+    
+    
     @FXML
-    private void salida(MouseEvent event) {
+    private void salida(MouseEvent event) {   
         System.out.println("salgo");
     }
 
     @FXML
     private void rept(MouseEvent event) {
-        System.out.println("repito");
+        
+        //int pos=0;
+  
+        for(int pos=0;pos<3;pos++)   {
+                
+           //pausar(2000);
+           actualizarAp(pos);
+        }
+        System.out.println("final");
+        
     }
-
 }
