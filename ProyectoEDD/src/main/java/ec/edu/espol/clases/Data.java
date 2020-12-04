@@ -21,19 +21,37 @@ import java.util.Map;
  * @author Ac 001
  */
 public final class Data {
-    static public Map<String ,String > usuarios= new HashMap();
+
+    static public Map<String, String> usuarios = new HashMap();
     private final static String nombre = "datos.txt";
     private static File archivo;
-    
-    public static boolean validarUsuario(String clave, String username){
-       for(Map.Entry<String,String> usuario: usuarios.entrySet()){
-           if(usuario.getKey().equals(clave) && usuario.getValue()==username){
-               return true;
-           }
-       }
+
+    public static boolean crearUsuario(String clave, String username) {
+        if (usuarios.isEmpty()) {
+            usuarios.put(clave, username);
+            return true;
+        } else {
+             for (Map.Entry<String, String> usuario : usuarios.entrySet()) {
+            if (usuario.getValue().equals(username)) {
+                return false;
+            }else{
+                 usuarios.put(clave, username);
+                 return true;
+            }
+        }
+        }
         return false;
     }
-    
+
+    public static boolean validarUsuario(String clave, String username) {
+        for (Map.Entry<String, String> usuario : usuarios.entrySet()) {
+            if (usuario.getKey().equals(clave) && usuario.getValue().equals(username)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void guardarArchivo() {
         String titulo = "Error al cargar el archivo";
         try {
@@ -43,14 +61,14 @@ public final class Data {
             oos.close();
             fos.close();
         } catch (FileNotFoundException ex) {
-            
+
         } catch (IOException ex) {
-           
+
         }
     }
 
     public static void CargarArchivo() {
-        archivo= new File(nombre);
+        archivo = new File(nombre);
         if (!archivo.exists()) {
             generarDatos();
         } else {
@@ -62,11 +80,11 @@ public final class Data {
                 fis.close();
             } catch (FileNotFoundException ex) {
                 System.out.println("Problema 1");
-             
+
             } catch (IOException ex) {
-              System.out.println("Problema 2");
+                System.out.println("Problema 2");
             } catch (ClassNotFoundException ex) {
-                 System.out.println("Problema 2");
+                System.out.println("Problema 2");
             }
 
         }
@@ -74,9 +92,9 @@ public final class Data {
     }
 
     public static void generarDatos() {
-      usuarios.put("aharon", "123");
-       usuarios.put("David", "345");
-       usuarios.put("Adrian", "678");
+        usuarios.put("aharon", "123");
+        usuarios.put("David", "345");
+        usuarios.put("Adrian", "678");
     }
 
 }

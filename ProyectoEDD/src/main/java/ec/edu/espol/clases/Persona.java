@@ -71,6 +71,11 @@ public class Persona extends Rectangle {
         objetivo.vivo=false;
         objetivo.apariencia=new Image(Constantes.PERSONAMUERTA);
     }
+    
+    public void pasarArma(Persona persona){
+        this.armado=false;
+        persona.armado=true;
+    }
 
     public Image getApariencia() {
         return apariencia;
