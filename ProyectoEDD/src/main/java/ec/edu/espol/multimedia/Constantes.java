@@ -15,4 +15,7 @@ public class Constantes {
     public final static String IMAGENES= "src/main/java/ec/edu/espol/multimedia";
     public final static String PERSONAVIVA= IMAGENES+"/per_viva.png";
     public final static String PERSONAMUERTA= IMAGENES+"/per_muerta.png";
+    public final static String ARMA= IMAGENES+"/nerf.png";
+    public final static String MIRA= IMAGENES+"/spot.png";
+
 }
