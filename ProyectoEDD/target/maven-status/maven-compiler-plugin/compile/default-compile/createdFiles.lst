@@ -8,7 +8,6 @@ ec\edu\espol\clases\Nodo.class
 ec\edu\espol\controllers\JuegoController.class
 ec\edu\espol\proyectoedd\SecondaryController.class
 module-info.class
-ec\edu\espol\proyectoedd\Stage.class
 ec\edu\espol\clases\Data.class
 ec\edu\espol\clases\ListIterator.class
 ec\edu\espol\clases\Persona.class
