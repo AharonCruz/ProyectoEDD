@@ -5,21 +5,19 @@
  */
 package ec.edu.espol.controllers;
 
-import ec.edu.espol.multimedia.Constantes;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import ec.edu.espol.clases.Persona;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+//import tritonus-share.class ;
 
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+
+//import javax.sound.AudioFormat;
 /**
  * FXML Controller class
  *
@@ -45,39 +43,31 @@ public class JuegoController implements Initializable {
         //CENTRO DEL CIRCULO EN X=400 ; Y 235;    RADIO=225
         int n=12;
         System.out.println("inicia");
-        
-        ArrayList<ImageView> lview=new ArrayList();
+        // AudioInputStream audioInput;
+        /*try{
+        File musicPath=new File("ssss");
+        if(musicPath.exists()){
+            AudioInputStream audioInput=AudioSystem.getAudioInputStream(musicPath);
+            Clip clip=AudioSystem.getClip();
+        }
+        else{
+            System.out.println("F");
+        }
+        }
+        catch(Exception e){
+                System.out.println("F");
+                }
+        */
         double cont=0;
         for(int i=0;i<n;i++){
-            
-            System.out.println(i);
-            FileInputStream inputstream=null; 
-            try {
-                inputstream = new FileInputStream(Constantes.PERSONAVIVA);
-            } catch (FileNotFoundException ex) {
-                ex.printStackTrace();
-            }
-            Image image = new Image(inputstream); 
-            ImageView imageView = new ImageView(image);
-            imageView.setX(400+radio*Math.cos(Math.toRadians(cont)));
-            System.out.println(radio*Math.cos(Math.toRadians(cont))+"-"+radio*Math.sin(Math.toRadians(cont)));
-            imageView.setY(235+radio*Math.sin(Math.toRadians(cont)));
-            imageView.setFitWidth(40.0);
-            imageView.setFitHeight(60.0);
-            lview.add(imageView);
-            try {
-                inputstream.close();
-                //fondo.getChildren().add(imageView);
-            } catch (IOException ex) {
-                System.out.println("");
+            Persona pt=new Persona(radio*Math.cos(Math.toRadians(cont)),radio*Math.sin(Math.toRadians(cont)));
+            for(ImageView iv: pt.getEstado_v()){
+                fondo.getChildren().add(iv);
             }
             cont+=360/n;
         }
-        System.out.println(lview.size());
-        for(ImageView v: lview){
-            fondo.getChildren().add(v);
-        }
         
+        /*
         Image img=null; 
         try {
             img = new Image(new FileInputStream(Constantes.PERSONAMUERTA));
@@ -90,20 +80,14 @@ public class JuegoController implements Initializable {
         imgView.setFitWidth(40.0);
         imgView.setFitHeight(60.0);
         fondo.getChildren().add(imgView);
+        */
+        Persona p1=new Persona();
+        p1.setArma(true);
+        p1.actualizarEstadov();
+        for(ImageView iv: p1.getEstado_v()){
+            fondo.getChildren().add(iv);
+        }
         
-        /*
-        img=null; 
-        try {
-            img = new Image(new FileInputStream(Constantes.ARMA));
-            imgView = new ImageView(img);
-            imgView.setX(415);
-            imgView.setY(220);
-            imgView.setFitWidth(60.0);
-            imgView.setFitHeight(80.0);
-            fondo.getChildren().add(imgView);
-        } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
-        }*/
         
     }    
     
