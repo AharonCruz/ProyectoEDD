@@ -7,6 +7,7 @@ package ec.edu.espol.clases;
 
 import ec.edu.espol.multimedia.Constantes;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
 
 /**
@@ -14,17 +15,31 @@ import javafx.scene.shape.Rectangle;
  * @author F. Lopez
  */
 public class Persona extends Rectangle {
-
-    private Image apariencia;
-    private boolean vivo;
-    private boolean armado;
-
+    //dimensiones persona 40x60, 
+    //dimensiones arma 60x80  ;X+=15      Y-=15      
+    //dimensiones MIRA 90x100  ;X-=25      Y-=25
+    //CENTRO DEL CIRCULO EN X=400 ; Y 235;    RADIO=225
+    Image apariencia;
+    ImageView vista;
+    boolean vivo;
+    boolean armado;
+    double posx=400;
+    double posy=235;
+    
     public Persona() {
         apariencia = new Image(Constantes.PERSONAVIVA);
         vivo = true;
         armado = false;
 
     }
+    public Persona(double x,double y){
+        apariencia = new Image(Constantes.PERSONAVIVA);
+        vivo = true;
+        armado = false;
+        posx+=x;
+        posy+=y;
+    }
+    
 
     public Persona apuntar(DoubleLinkedList<Persona> grupo, int orientacion) {
         Persona personaApuntada;
