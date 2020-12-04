@@ -21,7 +21,12 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+<<<<<<< HEAD
         /*Parent root = FXMLLoader.load(getClass().getResource("primary.fxml"));
+=======
+        
+        Parent root = FXMLLoader.load(getClass().getResource("secondary.fxml"));
+>>>>>>> 107eb9fdfca8729af4244ef26e89ec06e3553217
         
         Scene scene1 = new Scene (root);
         
@@ -49,7 +54,7 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        launch(args);
+        launch();
     }
 
 }
