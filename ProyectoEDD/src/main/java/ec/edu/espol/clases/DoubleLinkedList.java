@@ -142,7 +142,36 @@ public class DoubleLinkedList<E> implements List<E>{
     
     
     }
+    
+    public int getindex(E element){
+        int c=0;
+        for(Nodo<E> nv=first;nv!=last;nv=nv.getnext()){
+            if(Objects.equals(nv.getcont(), element))
+                return c;
+            
+            c++;
+        }
+           
+            
+        return 0;
+    }
+    public E get(int index) {
+        E conte=first.getcont();
+        
+        if(index<=0){
+            return conte;
+        }
+        else if(index<capacity){
+            int cont=0;
+            for(Nodo<E> nv=first;nv!=null;nv=nv.getnext()){
+                if(cont==index)          
+                    return nv.getcont();                                  
+                cont++;
+            }
+        }
+        return last.getcont();
 
+    }
     @Override
     public void add(int index, E element) {
        if(index<=0)
