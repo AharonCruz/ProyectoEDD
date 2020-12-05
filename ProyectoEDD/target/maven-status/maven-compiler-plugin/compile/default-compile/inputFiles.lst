@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\adria\Documents\NetBeansProjects\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\proyectoedd\App.java
 C:\Users\adria\Documents\NetBeansProjects\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\controllers\JuegoController.java
 C:\Users\adria\Documents\NetBeansProjects\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\controllers\PrimarioController.java
@@ -10,3 +11,35 @@ C:\Users\adria\Documents\NetBeansProjects\ProyectoEDD\ProyectoEDD\src\main\java\
 C:\Users\adria\Documents\NetBeansProjects\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\clases\Nodo.java
 C:\Users\adria\Documents\NetBeansProjects\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\clases\Data.java
 C:\Users\adria\Documents\NetBeansProjects\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\multimedia\Constantes.java
+=======
+<<<<<<< HEAD
+C:\Users\F. Lopez\Desktop\ESPOL\6to Semestre\Estructura de Datos\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\clases\Persona.java
+C:\Users\F. Lopez\Desktop\ESPOL\6to Semestre\Estructura de Datos\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\clases\Hilo.java
+C:\Users\F. Lopez\Desktop\ESPOL\6to Semestre\Estructura de Datos\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\clases\List.java
+C:\Users\F. Lopez\Desktop\ESPOL\6to Semestre\Estructura de Datos\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\clases\Data.java
+C:\Users\F. Lopez\Desktop\ESPOL\6to Semestre\Estructura de Datos\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\clases\Nodo.java
+C:\Users\F. Lopez\Desktop\ESPOL\6to Semestre\Estructura de Datos\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\proyectoedd\PrimaryController.java
+C:\Users\F. Lopez\Desktop\ESPOL\6to Semestre\Estructura de Datos\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\clases\ListIterator.java
+C:\Users\F. Lopez\Desktop\ESPOL\6to Semestre\Estructura de Datos\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\clases\DoubleLinkedList.java
+C:\Users\F. Lopez\Desktop\ESPOL\6to Semestre\Estructura de Datos\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\controllers\JuegoController.java
+C:\Users\F. Lopez\Desktop\ESPOL\6to Semestre\Estructura de Datos\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\multimedia\Constantes.java
+C:\Users\F. Lopez\Desktop\ESPOL\6to Semestre\Estructura de Datos\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\proyectoedd\App.java
+C:\Users\F. Lopez\Desktop\ESPOL\6to Semestre\Estructura de Datos\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\proyectoedd\SecondaryController.java
+C:\Users\F. Lopez\Desktop\ESPOL\6to Semestre\Estructura de Datos\ProyectoEDD\ProyectoEDD\src\main\java\module-info.java
+=======
+D:\Aharon\Estructura de Datos\Proyecto\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\controllers\SecundarioController.java
+D:\Aharon\Estructura de Datos\Proyecto\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\multimedia\Constantes.java
+D:\Aharon\Estructura de Datos\Proyecto\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\clases\Hilo.java
+D:\Aharon\Estructura de Datos\Proyecto\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\clases\List.java
+D:\Aharon\Estructura de Datos\Proyecto\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\clases\Data.java
+D:\Aharon\Estructura de Datos\Proyecto\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\controllers\PrimaryController.java
+D:\Aharon\Estructura de Datos\Proyecto\ProyectoEDD\ProyectoEDD\src\main\java\module-info.java
+D:\Aharon\Estructura de Datos\Proyecto\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\clases\Nodo.java
+D:\Aharon\Estructura de Datos\Proyecto\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\proyectoedd\App.java
+D:\Aharon\Estructura de Datos\Proyecto\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\clases\DoubleLinkedList.java
+D:\Aharon\Estructura de Datos\Proyecto\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\controllers\JuegoController.java
+D:\Aharon\Estructura de Datos\Proyecto\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\controllers\SecondaryController.java
+D:\Aharon\Estructura de Datos\Proyecto\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\clases\Persona.java
+D:\Aharon\Estructura de Datos\Proyecto\ProyectoEDD\ProyectoEDD\src\main\java\ec\edu\espol\clases\ListIterator.java
+>>>>>>> e624a27bde06ec49772168ef9f7abfb42b40bb92
+>>>>>>> 5277d2c9d67ffc2cb1f7b65325a2697207794d5f

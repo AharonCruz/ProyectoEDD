@@ -47,7 +47,7 @@ public class JuegoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //CENTRO DEL CIRCULO EN X=400 ; Y 235;    RADIO=225
-        int n=12;
+        int n=6;
         System.out.println("inicia");
         //AudioInputStream audioInput;
         /*try{
@@ -90,25 +90,21 @@ public class JuegoController implements Initializable {
     }
     
     private void actualizarAp(int pos){
-        
-        
-        
         Persona pert=pers.get(pos);
         int tamprev=2;
         for(int i=0;i<pert.getEstado_v().size();i++){
             tamprev+=dirs.get(i).size();
         }
         fondo.getChildren().removeAll(dirs.get(pos));
-        pert.setVida(false);
+        /*pert.setVida(false);
         pert.actualizarEstadov();
-        dirs.get(pos).clear();
+        dirs.get(pos).clear();*/
         ArrayList<Node> atris=new ArrayList();
         for(ImageView iv: pert.getEstado_v()){
             fondo.getChildren().add(tamprev,iv);
             atris.add(fondo.getChildren().get(tamprev));
             }
         dirs.get(pos).addAll(atris);
-        
         }
         
         
@@ -137,19 +133,41 @@ public class JuegoController implements Initializable {
        //    actualizarAp(pos);
        // }
        ListIterator<Persona> iterador= pers.listiterator();
-       pers.get(0).setArma(true);
-       int cont=0;
-       //Persona primero= iterador.next();
+       //pers.get(0).setArma(true);
        
-       while(cont< pers.size()-2){
-           Persona persona= iterador.next();
-           if(persona.seleccionarPersona(pers, 1) != null){
-            persona.matar(persona.seleccionarPersona(pers, 1));
-            persona.pasarArma(persona.seleccionarPersona(pers, 1));
-           }
-          
+       //Persona primero= iterador.next();
+       boolean play=true;
+       while(play){
+            Persona jug_act=iterador.next();
+            while(!jug_act.isVivo())
+                jug_act=iterador.next();
+            jug_act.setArma(true);
+            jug_act.actualizarEstadov();
+            //System.out.println("POsicion del actual"+pers.getindex(jug_act)+"|  ");
+            Persona blanco=iterador.next();
+            while(!blanco.isVivo()){
+                blanco=iterador.next();
+                //System.out.println("Apuntador y Apuntado"+pers.getindex(jug_act)+"-"+pers.getindex(blanco));    
+                if(blanco.isArmado()){
+                    play=false;
+                }
+            }
+            if (play){                
+                blanco.setBlanco(true);   
+                blanco.actualizarEstadov();
+                blanco.setVida(false);
+                blanco.actualizarEstadov();
+                jug_act.setArma(false);
+                jug_act.actualizarEstadov();  
+               /* actualizarAp(pers.getindex(blanco));
+                actualizarAp(pers.getindex(jug_act));*/
+            }   
+        }
+       for(int i=0;i<pers.size();i++){
+            //System.out.println(pers.get(i).isVivo());
+            actualizarAp(i);
        }
-        System.out.println("final");
+       
         
     }
 }

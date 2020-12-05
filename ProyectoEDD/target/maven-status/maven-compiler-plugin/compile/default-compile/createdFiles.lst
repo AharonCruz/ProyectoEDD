@@ -6,7 +6,13 @@ ec\edu\espol\multimedia\Constantes.class
 ec\edu\espol\clases\Hilo.class
 ec\edu\espol\clases\Nodo.class
 ec\edu\espol\controllers\JuegoController.class
+<<<<<<< HEAD
+=======
+ec\edu\espol\controllers\PrimaryController.class
+ec\edu\espol\controllers\SecondaryController.class
+>>>>>>> 5277d2c9d67ffc2cb1f7b65325a2697207794d5f
 module-info.class
+ec\edu\espol\controllers\SecundarioController.class
 ec\edu\espol\clases\Data.class
 ec\edu\espol\clases\ListIterator.class
 ec\edu\espol\clases\Persona.class

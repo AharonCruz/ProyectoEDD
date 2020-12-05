@@ -51,7 +51,8 @@ public class DoubleLinkedList<E> implements List<E>{
         else{
             nn.setprevious(last);
             last.setnext(nn);            
-            last=nn;            
+            last=nn; 
+            nn.setnext(first);
         }       
         capacity++;
         return true;
