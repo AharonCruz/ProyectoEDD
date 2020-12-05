@@ -60,6 +60,9 @@ public class Persona {
     public boolean isVivo() {
         return vivo;
     }
+     public boolean isPointed() {
+        return apuntado;
+    }
 
     public void setVida(boolean b) {
         vivo = b;
@@ -175,7 +178,7 @@ public class Persona {
 }
 
     public void matar(Persona objetivo) {
-        objetivo.vivo = false;
+        objetivo.setVida(false); 
         System.out.println("se ha matado a :"+ objetivo);
         //objetivo.apariencia = new Image(Constantes.PERSONAMUERTA);
     }
