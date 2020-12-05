@@ -2,7 +2,7 @@ package ec.edu.espol.proyectoedd;
 
 import ec.edu.espol.clases.Data;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import javafx.fxml.FXMLLoader;
 
 /**
  * JavaFX App
@@ -21,26 +22,29 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        
+        
+        
 
        
         //scene = new Scene(loadFXML("primary"), 640, 480);
 
 
-        /*Parent root = FXMLLoader.load(getClass().getResource("primary.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("primario.fxml"));
 
         
-        Parent root = FXMLLoader.load(getClass().getResource("secondary.fxml"));
+        /*Parent root = FXMLLoader.load(getClass().getResource("secondary.fxml"));*/
 
         
         Scene scene1 = new Scene (root);
         
         stage.setScene(scene1);
-        stage.show();*/
+        stage.show();
         
-        scene = new Scene(loadFXML("juego"));
+        /*scene = new Scene(loadFXML("juego"));
         
         stage.setScene(scene);
-        stage.show();
+        stage.show();*/
         
     }
 
