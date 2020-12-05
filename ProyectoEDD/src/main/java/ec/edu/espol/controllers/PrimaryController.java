@@ -1,4 +1,4 @@
-package ec.edu.espol.proyectoedd;
+package ec.edu.espol.controllers;
 
 import java.io.IOException;
 import java.net.URL;

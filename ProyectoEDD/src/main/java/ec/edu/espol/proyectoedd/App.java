@@ -29,7 +29,7 @@ public class App extends Application {
         /*Parent root = FXMLLoader.load(getClass().getResource("primary.fxml"));
 
         
-        Parent root = FXMLLoader.load(getClass().getResource("secondary.fxml"));
+        Parent root2 = FXMLLoader.load(getClass().getResource("secondary.fxml"));
 
         
         Scene scene1 = new Scene (root);
@@ -37,7 +37,7 @@ public class App extends Application {
         stage.setScene(scene1);
         stage.show();*/
         
-        scene = new Scene(loadFXML("juego"));
+        scene = new Scene(loadFXML("secundario"));
         
         stage.setScene(scene);
         stage.show();
